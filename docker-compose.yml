@@ -1,0 +1,32 @@
+# version: '3.8'
+
+# services:
+#   hotel-price-scraper:
+#     build: .
+#     container_name: hotel-price-scraper
+#     volumes:
+#       - ./storage:/app/storage
+#     ports:
+#       - "3000:3000"
+#     environment:
+#       - NODE_ENV=local
+#     shm_size: 2g
+#     working_dir: /app
+#     command: npm run start:docker --silent
+
+version: '3.8'
+
+services:
+  hotel-price-scraper:
+    image: apify/actor-node-playwright-chrome:latest # Using the latest stable tag
+    container_name: hotel-price-scraper
+    volumes:
+      - ./storage:/app/storage
+      - ./:/app # Mount your entire project directory into the container
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=local
+    shm_size: 2g
+    working_dir: /app
+    command: npm run start:docker --silent

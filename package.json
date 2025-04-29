@@ -1,0 +1,19 @@
+{
+  "name": "hotel-price-scraper",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "A Node.js scraper that fetches and compares 5-star hotel prices from Booking.com and MakeMyTrip.com for a given city, using Playwright and Crawlee.",
+  "scripts": {
+    "start": "rm -rf storage && node src/main.js",
+    "start:docker": "node src/main.js",
+    "test": "echo \"Error: oops, the actor has no tests yet, sad!\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crawlee": "^3.13.2",
+    "playwright": "*"
+  }
+}
